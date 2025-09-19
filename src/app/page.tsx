@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import AiAnimation from "./_components/AiAnimation";
 import { Bot } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const exams = [
   { name: "QUIZ 1", weight: 0.016, class: "q" },
@@ -29,7 +31,7 @@ const exams = [
   { name: "PROFICIENCY (FINAL) EXAM", weight: 0.6, class: "f" },
 ];
 
-export default function Home() {
+/* export default function Home() {
   const [scores, setScores] = useState(Array(exams.length).fill(""));
   const [finalScore, setFinalScore] = useState<number>();
   const [loading, setLoading] = useState(false);
@@ -153,6 +155,25 @@ export default function Home() {
           </span>
         </div>
       )}
+    </div>
+  );
+} */
+
+export default function Home() {
+  return (
+    <div className="min-h-screen flex flex-col justify-center items-center bg-white p-6 text-center">
+      <h1 className="text-6xl font-extrabold mb-4 text-yellow-400 drop-shadow-lg">
+        Taşındık!
+      </h1>
+      <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-lg">
+        Taşındık! Artık hesaplamalarınızı <strong>mucommunity.com</strong>{" "}
+        üzerinden kolayca yapabilirsiniz.
+      </p>
+      <Link href={"https://mucommunity.com/hazirlik"}>
+        <Button className="px-8 py-4 text-lg font-semibold bg-yellow-400 hover:bg-blue-500 text-white rounded-lg shadow-md transition">
+          Şimdi Hesapla
+        </Button>
+      </Link>
     </div>
   );
 }
